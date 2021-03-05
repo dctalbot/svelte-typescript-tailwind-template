@@ -3,10 +3,10 @@ module.exports = {
   css: ["./public/build/bundle.css"],
   output: "./public/build/bundle.css",
   keyframes: true,
-  // defaultExtractor: (content) => [
-  //   ...(content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []),
-  //   ...(content.match(/(?<=class:)[^=>\/\s]*/g) || []),
-  // ],
+  defaultExtractor: (content) => [
+    ...(content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []),
+    ...(content.match(/(?<=class:)[^=>\/\s]*/g) || []),
+  ],
   safelist: {
     standard: [/^svelte\-/],
     deep: [/^svelte\-/],
