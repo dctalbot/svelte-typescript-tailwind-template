@@ -1,20 +1,22 @@
-_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
+# Getting started
 
----
+This template uses a `Makefile` with these commands for convenience:
 
-## Get started
+    make start
+    make start-prod
+    make check
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+If you aren't familiar with `make`, just peek at the `Makefile` and you can run the `npm` commands manually.
 
 ## Building and running in production mode
 
 To create an optimised version of the app:
 
 ```bash
-npm run build
+make public/build
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+You can run the newly built app with `make start-prod`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
 
 ## Single-page app mode
 
@@ -24,20 +26,6 @@ If you're building a single-page app (SPA) with multiple routes, sirv needs to b
 
 ```js
 "start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
 ```
 
 ## Deploying to the web
@@ -68,6 +56,6 @@ npm install -g surge
 Then, from within your project folder:
 
 ```bash
-npm run build
+make public/build
 surge public my-project.surge.sh
 ```
