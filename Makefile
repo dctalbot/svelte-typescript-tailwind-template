@@ -23,7 +23,7 @@ package-lock.json: package.json
 node_modules: package-lock.json
 	@touch -c $@
 
-public/build: node_modules src public
+public/build: node_modules $(shell find src) $(shell find public -not \( -path public/build -prune \))
 	@npm run --silent build
 	@npm run --silent css:purge
 	@touch -c $@
