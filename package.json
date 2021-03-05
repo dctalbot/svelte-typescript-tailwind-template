@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "rollup -c",
-    "check": "svelte-check && prettier --loglevel warn --check .",
+    "check": "svelte-check --fail-on-warnings --fail-on-hints --output machine && prettier --loglevel warn --check .",
     "css:purge": "purgecss --config purgecss.config.js",
     "dev": "rollup -c -w",
     "start": "sirv public",
